@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "859851608344",
+    "project_id": "my-portfolio-fb0f9",
+    "storage_bucket": "my-portfolio-fb0f9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:859851608344:android:25a779d3b0ae998f348e6d",
+        "android_client_info": {
+          "package_name": "com.kelvinatemiehart.kelvin_atemie_hart_portfolio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "859851608344-hlbrt435bnmcdm8931bjthnpe4u2ef2d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDT5i0DIaBHwdpSGDwd7odRj4YjIvxA9u8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "859851608344-hlbrt435bnmcdm8931bjthnpe4u2ef2d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
