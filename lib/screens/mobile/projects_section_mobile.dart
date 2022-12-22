@@ -34,11 +34,18 @@ class ProjectSectionMobile extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Flexible(
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(25),
-                          child: Image.asset(
-                            projects[index].imageString,
-                            fit: BoxFit.cover,
+                        child: GestureDetector(
+                          onTap: ()async {
+                            if (await canLaunchUrl(url)) {
+                              await launchUrl(url);
+                            }
+                          },
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(25),
+                            child: Image.asset(
+                              projects[index].imageString,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ),

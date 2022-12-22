@@ -34,11 +34,18 @@ class ProjectsSection extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Flexible(
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(40),
-                          child: Image.asset(
-                            projects[index].imageString,
-                            fit: BoxFit.cover,
+                        child: GestureDetector(
+                          onTap: ()async {
+                            if (await canLaunchUrl(url)) {
+                            await launchUrl(url);
+                            }
+                          },
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(40),
+                            child: Image.asset(
+                              projects[index].imageString,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ),
@@ -53,16 +60,6 @@ class ProjectsSection extends StatelessWidget {
                               projects[index].projectName,
                               style: Theme.of(context).textTheme.headline4,
                             ),
-                            // SelectableText(
-                            //   projects[index].projectDescription,
-                            //   style: Theme.of(context).textTheme.bodyText1,
-                            // ),
-                            // IconButton(
-                            //     onPressed: () {},
-                            //     icon: const FaIcon(
-                            //       FontAwesomeIcons.link,
-                            //       size: 16,
-                            //     )),
                             IconButton(
                               onPressed: () async {
                                 if (await canLaunchUrl(url)) {
