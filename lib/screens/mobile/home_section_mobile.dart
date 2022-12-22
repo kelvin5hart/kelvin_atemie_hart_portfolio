@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 
 import '../../widgets/download_resume_widget.dart';
 import '../../widgets/social_media_icons_widget.dart';
@@ -17,13 +16,19 @@ class HomeSectionMobile extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
 
         children: [
-          Lottie.asset(
-            'assets/HomePageAnimation.json', height: 300
-          ),
+          Container(
+              margin: const EdgeInsets.only(top: 40, bottom: 40),
+              // width: 200,
+              // height: 300,
+              child: Center(
+                child: Image.asset(
+                  "assets/images/home page logo.png",
+                  scale:1.1,
+                  fit: BoxFit.contain,
+                ),
+              )),
           Padding(
-            padding: EdgeInsets.only(
-                left: MediaQuery.of(context).size.width / 18,
-                top: MediaQuery.of(context).size.width / 10),
+            padding: const EdgeInsets.all(10.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [

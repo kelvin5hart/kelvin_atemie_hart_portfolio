@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../controller/theme_controller.dart';
+import '../../constants.dart';
+import '../../cubit/theme_cubit.dart';
 import 'about_section_tablet.dart';
 import 'contact_section_tablet.dart';
 import 'home_section_tablet.dart';
@@ -55,20 +56,23 @@ class TabletBodyScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                GetX<ThemeController>(
-                  builder: (themeController) => Padding(
-                    padding: EdgeInsets.only(right: MediaQuery.of(context).size.width /18),
-                    child: Switch(
-                      value: themeController.currentThemeState == 'dark',
-                      onChanged: (value) {
-                        if (value) {
-                          themeController.switchTheme();
-                        } else {
-                          themeController.switchTheme();
-                        }
-                      },
-                    ),
-                  ),
+                BlocBuilder<ThemeCubit, ThemeState>(
+                  builder: (context, state) {
+                    return Padding(
+                      padding: EdgeInsets.only(
+                          right: MediaQuery.of(context).size.width / 18),
+                      child: Switch(
+                        value: state.theme == blueDarkTheme(),
+                        onChanged: (value) {
+                          if (value) {
+                            BlocProvider.of<ThemeCubit>(context).switchTheme();
+                          } else {
+                            BlocProvider.of<ThemeCubit>(context).switchTheme();
+                          }
+                        },
+                      ),
+                    );
+                  },
                 )
               ],
             ),
