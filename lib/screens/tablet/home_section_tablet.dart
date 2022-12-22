@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 import '../../widgets/download_resume_widget.dart';
 import '../../widgets/social_media_icons_widget.dart';
 import '../../widgets/typewriter_text_widget.dart';
@@ -19,10 +18,9 @@ class HomeSectionTablet extends StatelessWidget {
           Expanded(
             child: Padding(
               padding: EdgeInsets.only(
-                  left: MediaQuery.of(context).size.width / 18,
-                  top: MediaQuery.of(context).size.width / 10),
+                  left: MediaQuery.of(context).size.width / 18,),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
@@ -43,10 +41,17 @@ class HomeSectionTablet extends StatelessWidget {
             ),
           ),
           // Add the Lottie widget here
-          Expanded(
-              child: Lottie.asset(
-                'assets/HomePageAnimation.json',
-              )),
+          Container(
+              margin: EdgeInsets.only(right: MediaQuery.of(context).size.width / 18 * 2,),
+              // width: 200,
+              // height: 300,
+              child: Center(
+                child: Image.asset(
+                  "assets/images/home page logo.png",
+                  scale: 0.8,
+                  fit: BoxFit.contain,
+                ),
+              ))
         ],
       ),
     );
