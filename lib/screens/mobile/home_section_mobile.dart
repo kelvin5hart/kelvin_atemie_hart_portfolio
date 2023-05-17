@@ -33,8 +33,11 @@ class HomeSectionMobile extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  '{"I_Am:',
-                  style: Theme.of(context).textTheme.headline2?.copyWith(fontSize: 16),
+                  'I Am:',
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline2
+                      ?.copyWith(fontSize: 16),
                 ),
                 const TypeWriterTextWidget(fontSize: 36,),
                 const SizedBox(

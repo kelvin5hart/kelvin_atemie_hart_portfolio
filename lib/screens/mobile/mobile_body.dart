@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../constants.dart';
 import '../../cubit/theme_cubit.dart';
@@ -48,35 +49,35 @@ class MobileBodyScreen extends StatelessWidget {
           children: [
         Row(
         children: [
-        const SizedBox(width: 15,),
-        const Expanded(
-          child: Text(
-            'Menu',
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-          BlocBuilder<ThemeCubit, ThemeState>(
-            builder: (context, state) {
-              return Padding(
-                padding: EdgeInsets.only(
-                    right: MediaQuery.of(context).size.width / 18),
-                child: Switch(
-                  value: state.theme == blueDarkTheme(),
-                  onChanged: (value) {
-                    if (value) {
-                      BlocProvider.of<ThemeCubit>(context).switchTheme();
-                    } else {
-                      BlocProvider.of<ThemeCubit>(context).switchTheme();
-                    }
+                const SizedBox(
+                  width: 15,
+                ),
+                const Expanded(
+                  child: Text(
+                    'Menu',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                const Icon(FontAwesomeIcons.sun),
+                BlocBuilder<ThemeCubit, ThemeState>(
+                  builder: (context, state) {
+                    return Switch(
+                      value: state.theme == blueDarkTheme(),
+                      onChanged: (value) {
+                        if (value) {
+                          BlocProvider.of<ThemeCubit>(context).switchTheme();
+                        } else {
+                          BlocProvider.of<ThemeCubit>(context).switchTheme();
+                        }
+                      },
+                    );
                   },
                 ),
-              );
-            },
-          )
-        ],
+                const Icon(FontAwesomeIcons.moon)
+              ],
       ),
             for (final sectionTitle in _sectionTitles)
               ListTile(

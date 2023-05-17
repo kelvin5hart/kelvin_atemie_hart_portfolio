@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../widgets/contact_info_widget.dart';
 import '../../widgets/download_resume_widget.dart';
 import '../../widgets/social_media_icons_widget.dart';
 

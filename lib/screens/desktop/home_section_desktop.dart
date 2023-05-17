@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../widgets/download_resume_widget.dart';
 import '../../widgets/social_media_icons_widget.dart';
 import '../../widgets/typewriter_text_widget.dart';
@@ -24,7 +25,7 @@ class HomeSection extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    '{"I_Am:',
+                    'I Am:',
                     style: Theme.of(context).textTheme.headline2,
                   ),
                   const TypeWriterTextWidget(

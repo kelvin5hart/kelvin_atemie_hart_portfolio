@@ -9,7 +9,6 @@ ThemeData blueTheme() {
   return ThemeData(
     brightness: Brightness.light,
     primaryColor: const Color(0xFF101D42),
-    backgroundColor: const Color(0xFFE9ECEF),
     appBarTheme: const AppBarTheme(
         backgroundColor: Color(0xFFE9ECEF), foregroundColor: Color(0xFF212529)),
     fontFamily: 'Georgia',
@@ -30,7 +29,7 @@ ThemeData blueTheme() {
     colorScheme: const ColorScheme.light(
       primary: Color(0xFF101D42),
       secondary: Colors.yellow,
-    ),
+    ).copyWith(background: const Color(0xFFE9ECEF)),
   );
 }
 
@@ -38,7 +37,6 @@ ThemeData blueDarkTheme() {
   return ThemeData(
     brightness: Brightness.dark,
     primaryColor: const  Color(0xFFC9E4CA),
-    backgroundColor: const Color(0xFF343A40),
     appBarTheme: const AppBarTheme(
         backgroundColor: Color(0xFF343A40), foregroundColor: Color(0xFFF8F9FA)),
     fontFamily: 'Georgia',
@@ -59,7 +57,7 @@ ThemeData blueDarkTheme() {
     colorScheme: const ColorScheme.dark(
       primary: Color(0xFFC9E4CA),
       secondary: Colors.yellow,
-    ),
+    ).copyWith(background: const Color(0xFF343A40)),
   );
 }
 
@@ -84,13 +82,37 @@ List<Skills> skills = [
       imageString: "assets/logos/FirebaseLogo.png",
       skillName: "Firebase",
       yearsOfExperience: "2"),
+  // Skills(
+  //     imageString: "assets/logos/MayaLogo.jpg",
+  //     skillName: "Maya",
+  //     yearsOfExperience: "2"),
+  // Skills(
+  //     imageString: "assets/logos/AELogo.png",
+  //     skillName: "After Effects",
+  //     yearsOfExperience: "2"),
   Skills(
-      imageString: "assets/logos/MayaLogo.jpg",
-      skillName: "Maya",
+      imageString: "assets/logos/CSS3logopng.png",
+      skillName: "CSS",
       yearsOfExperience: "2"),
   Skills(
-      imageString: "assets/logos/AELogo.png",
-      skillName: "After Effects",
+      imageString: "assets/logos/html-1.png",
+      skillName: "HTML",
+      yearsOfExperience: "2"),
+  Skills(
+      imageString: "assets/logos/jslogo.png",
+      skillName: "JS",
+      yearsOfExperience: "2"),
+  Skills(
+      imageString: "assets/logos/Pythonlogo.png",
+      skillName: "Python",
+      yearsOfExperience: "2"),
+  Skills(
+      imageString: "assets/logos/Reactlogopng.png",
+      skillName: "React",
+      yearsOfExperience: "2"),
+  Skills(
+      imageString: "assets/logos/Tailwindlogopng.png",
+      skillName: "Tailwind",
       yearsOfExperience: "2"),
 ];
 

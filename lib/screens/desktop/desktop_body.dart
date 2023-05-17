@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import '../../constants.dart';
 import '../../cubit/theme_cubit.dart';
 import 'about_section_desktop.dart';
@@ -79,25 +81,26 @@ class DesktopBodyScreen extends StatelessWidget {
           //     ),
           //   ),
           // )
+          const Icon(FontAwesomeIcons.sun),
           BlocBuilder<ThemeCubit, ThemeState>(
             builder: (context, state) {
-              return Padding(
-                padding: EdgeInsets.only(
-                    right: MediaQuery.of(context).size.width / 18),
-                child: Switch(
-                  value: state.theme == blueDarkTheme(),
-                  onChanged: (value) {
-                    if (value) {
-                      BlocProvider.of<ThemeCubit>(context).switchTheme();
-                    } else {
-                      BlocProvider.of<ThemeCubit>(context).switchTheme();
-                    }
-                  },
-                ),
+              return Switch(
+                value: state.theme == blueDarkTheme(),
+                onChanged: (value) {
+                  if (value) {
+                    BlocProvider.of<ThemeCubit>(context).switchTheme();
+                  } else {
+                    BlocProvider.of<ThemeCubit>(context).switchTheme();
+                  }
+                },
               );
             },
+          ),
+          Padding(
+            padding:
+                EdgeInsets.only(right: MediaQuery.of(context).size.width / 18),
+            child: const Icon(FontAwesomeIcons.moon),
           )
-
         ],
       ),
       body: SingleChildScrollView(

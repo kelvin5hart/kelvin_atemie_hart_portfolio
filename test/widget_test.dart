@@ -7,24 +7,34 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:kelvin_atemie_hart_portfolio/main.dart';
+import 'package:kelvin_atemie_hart_portfolio/screens/desktop/home_section_desktop.dart';
+import 'package:kelvin_atemie_hart_portfolio/widgets/download_resume_widget.dart';
+import 'package:kelvin_atemie_hart_portfolio/widgets/social_media_icons_widget.dart';
+import 'package:kelvin_atemie_hart_portfolio/widgets/typewriter_text_widget.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  testWidgets('HomeSection widget test', (WidgetTester tester) async {
+    // Build the widget
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: HomeSection(),
+      ),
+    );
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    // Check if the text is displayed
+    expect(find.text('{"I_Am:'), findsOneWidget);
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    // Check if the TypeWriterTextWidget is displayed
+    expect(find.byType(TypeWriterTextWidget), findsOneWidget);
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Check if the SocialMediaIconsWidget is displayed
+    expect(find.byType(SocialMediaIconsWidget), findsOneWidget);
+
+    // Check if the DownloadResume widget is displayed
+    expect(find.byType(DownloadResume), findsOneWidget);
+
+    // Check if the image is displayed
+    expect(find.byType(Image), findsOneWidget);
   });
 }
+

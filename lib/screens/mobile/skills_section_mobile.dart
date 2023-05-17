@@ -8,13 +8,17 @@ class SkillsSectionMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 500,
+      height: 550,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Padding(
             padding: const EdgeInsets.only(bottom: 30.0, top: 40),
-            child: Text("Skills", style: Theme.of(context).textTheme.headline3?.copyWith(fontSize: 30)),
+            child: Text("Skills",
+                style: Theme.of(context)
+                    .textTheme
+                    .headline3
+                    ?.copyWith(fontSize: 30)),
           ),
           Flexible(
             flex: 2,

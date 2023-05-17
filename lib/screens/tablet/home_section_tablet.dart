@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../widgets/download_resume_widget.dart';
 import '../../widgets/social_media_icons_widget.dart';
 import '../../widgets/typewriter_text_widget.dart';
@@ -24,8 +25,11 @@ class HomeSectionTablet extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    '{"I_Am:',
-                    style: Theme.of(context).textTheme.headline2?.copyWith(fontSize: 20),
+                    'I Am:',
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline2
+                        ?.copyWith(fontSize: 20),
                   ),
                   const TypeWriterTextWidget(fontSize: 45,),
                   const SizedBox(
